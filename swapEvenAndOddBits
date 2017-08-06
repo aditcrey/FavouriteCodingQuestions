@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    ios_base::sync_with_stdio(false);
+	int t;cin>>t;
+	
+	
+	while(t--){
+	    
+	    unsigned int n;cin>>n;
+	    
+	    
+	    int even = n & 0xAAAAAAAA;
+	    int odd = n & 0x55555555;
+	    
+	    even = even>>1;
+	    odd = odd<<1;
+	    
+	    n = even + odd;
+	    
+	    cout<<n<<endl;
+	    
+	   
+	   
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	}
+	
+	
+	return 0;
+}
