@@ -1,0 +1,81 @@
+#include <iostream>
+using namespace std;
+
+int r,c;
+
+void fillutil(int **screen, int x, int y, int prev, int newc)
+{
+    if(x<0 || x>=r || y<0 || y>=c)
+    return;
+    
+    if(screen[x][y]!=prev)return;
+    
+    screen[x][y]= newc;
+    
+    fillutil(screen,x+1,y,prev,newc);
+    fillutil(screen,x-1,y,prev,newc);
+    fillutil(screen,x,y-1,prev,newc);
+    fillutil(screen,x,y+1,prev,newc);
+}
+
+void fill(int **screen, int x, int y, int nya)
+{
+    int prev = screen[x][y];
+    fillutil(screen,x,y,prev,nya);
+    
+}
+
+void read(int ** arr)
+{
+     for(int i=0; i<r; i++)
+	    for(int j=0; j<c; j++)
+	    cin>>arr[i][j];
+}
+
+
+int main() {
+	int t,x,y,k;
+	cin>>t;
+	while(t--)
+	{
+	    cin>>r;
+	    cin>>c;
+	    int **arr = new int *[r];
+	    for(int i=0; i<r; i++)
+	    arr[i]= new int[c];
+	    
+	   read(arr);
+	    
+	    cin>>x;
+	    cin>>y;
+	    cin>>k;
+	    
+	    fill(arr,x,y,k);
+	    
+	    for(int i=0; i<r; i++)
+	    for(int j=0; j<c; j++)
+	    cout<<arr[i][j]<<" ";
+	    
+	    cout<<endl;
+	    free(arr);
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	return 0;
+}
