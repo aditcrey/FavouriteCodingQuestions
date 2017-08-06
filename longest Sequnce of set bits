@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	
+	int t;cin>>t;
+	unsigned int n;
+	int count;
+	while(t--){
+	    
+	    
+	    cin>>n;
+	    count=0;
+	    while(n!=0){
+	        n=n&(n<<1); //this gets rid of the trailing 1 in every consecutive sequence of 1s
+	        count++;
+	    }
+	    
+	    cout<<count<<endl;
+	    
+	    
+	}
+	
+	return 0;
+}
