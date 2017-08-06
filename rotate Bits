@@ -1,0 +1,18 @@
+#include<bits/stdc++.h>
+
+
+using namespace std;
+
+int main()
+{
+       int t;
+       cin>>t;
+       while(t--)
+       {
+           short n,d;
+           cin>>n>>d;
+           cout<<((n<<d)|(n>>(16-d)))<<endl;
+           cout<<((n>>d)|(n<<(16-d)))<<endl;
+       }
+       return 0;
+}
